@@ -4,7 +4,6 @@ import java.util.*;
 
 import helpers.helpers;
 public class q26 {
-
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -35,5 +34,5 @@ public class q26 {
 		}
 		return i.toString().length();
 	}
-	
+
 }
