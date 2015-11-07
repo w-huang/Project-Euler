@@ -26,6 +26,21 @@ public class helpers {
 		return factors;
 		
 	}
+	public static void printArray(int[] a){
+		System.out.println("The values of a are: ");
+		for(int i = 0; i < a.length; ++i){
+			System.out.print(" " + a[i]);
+		}
+	}
+	
+	public static String arrayToString(int[] a){
+		StringBuffer s = new StringBuffer();
+		for(int i = 0; i < a.length; ++i){
+			s.append(" ");
+			s.append(a[i]);
+		}
+		return s.toString();
+	}
 	
 	public static int numDigits(int i){
 		int a = 0;
