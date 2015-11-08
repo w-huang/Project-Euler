@@ -4,23 +4,44 @@ public class q33 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*
+		int num = 1;
+		int den = 1;
 		for(int i = 10; i < 100; ++i){
-			for(int j = 10; j < 100; ++j){
+			for(int j = 10; j < i; ++j){
 				if(i == j || (i%10 == 0 && j%10 == 0)) continue;
-				else if(goodMath(i,j)[0] == badMath(i,j)[0] && goodMath(i,j)[1] == badMath(i,j)[1] && goodMath(i,j)[1] != j && goodMath(i,j)[0] != i){
-					System.out.println("I: " + i + " J: " + j);
-					System.out.println("Good math: " + helpers.arrayToString(goodMath(i,j)) + "Bad math: " + helpers.arrayToString(badMath(i,j)));
+				else{
+					int goodNum = goodMath(j,i)[0];
+					int goodDen = goodMath(j,i)[1];
+					int badNum = badMath(j,i)[0];
+					int badDen = badMath(j,i)[1];
+					if(badNum == j && badDen == i){
+						continue;
+					}
+					else if(goodMath(goodNum, goodDen)[0] == goodMath(badNum, badDen)[0] && goodMath(goodNum, goodDen)[1] == goodMath(badNum, badDen)[1])
+					 {
+						System.out.println("Before Multiplication: " + num + "/" + den);
+						num *= i;
+						den *= j;
+
+						System.out.println("After Multiplication: " + num + "/" + den);
+					}
+				}
+				if(num == 0 || den == 0){
+					System.out.println(i);
+					System.out.println(j);
+					return;
 				}
 			}
-		}*/
-		helpers.printArray(goodMath(26 * 19 * 16 * 49, 65*64*95*98));
+		}
+		System.out.println(num);
+		System.out.println(den);
+		helpers.printArray(goodMath(num,den));
 	}
 	
 	public static int[] goodMath(int n, int d){
 		int[] res = new int[2];
 		int val = 2;
-		while(!helpers.isPrime(n) && val < n){
+		while( val <= n){
 			if(n % val == 0 && d % val == 0){
 				n /= val;
 				d /= val;
